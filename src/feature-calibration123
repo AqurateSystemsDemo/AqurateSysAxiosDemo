@@ -1,0 +1,9 @@
+// v2.1 Pressure Calibration Update
+function calibratePressure(readings, tempCurrent, tempBaseline) {
+  const n = readings.length;
+  const avg = readings.reduce((a, b) => a + b, 0) / n;
+  const kT = 0.0025; // temperature coefficient
+  return avg + kT * (tempCurrent - tempBaseline);
+}
+//Commit Message
+feat: improve pressure sensor calibration algorithm (CU-86dy8vvmm)
